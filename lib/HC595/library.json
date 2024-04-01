@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/schema/library.json",
+  "name": "HC595",
+  "version": "1.0.0",
+  "description": "A powerful but easy to use 74HC595 Library",
+  "keywords": ["74HC595", "HC595", "Shift Register", "Arduino"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a3510377/Arduino-HC595"
+  },
+  "authors": [
+    {
+      "name": "a3510377",
+      "email": "a102009102009@gmail.com",
+      "url": "https://github.com/a3510377"
+    }
+  ],
+  "license": "MIT",
+  "build": {
+    "srcDir": "src/"
+  },
+  "headers": ["src/HC595.h", "src/HC595.hpp"],
+  "export": {
+    "include": ["examples/*", "src/*"]
+  },
+  "frameworks": "arduino"
+}
