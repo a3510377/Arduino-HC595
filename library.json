@@ -16,12 +16,6 @@
     }
   ],
   "license": "MIT",
-  "build": {
-    "srcDir": "src/"
-  },
-  "headers": ["src/HC595.h", "src/HC595.hpp"],
-  "export": {
-    "include": ["examples/*", "src/*"]
-  },
-  "frameworks": "arduino"
+  "frameworks": "arduino",
+  "platforms": "*"
 }

@@ -182,11 +182,24 @@ template <uint8_t size>
 void HC595<size>::move(unsigned int step, bool update) {
   step = min(step, size * 8);
 
-  // TODO add move function
-  if (step > 8) {
-    // uint8_t moveData[];
+  uint8_t port_count = step / 8;
+  if (step % 8 == 0) {
+    for (uint8_t i = size + 1 - port_count; i >= 0; i--) {
+      _data[i] = i - x >= 0 ? _data[i - port_count] : 0;
+    }
+  } else if (port_count > 0) {
+    // TODO Implement this
   } else {
+    // TODO Implement this
   }
+
+  // for (uint8_t i = 0; i < step; i++) {
+  //   uint8_t temp;
+  //   uint8_t port = _data[i];
+  //   for (uint8_t j = 0; j < step; j++) {
+  //   }
+  //   // temp[i] = _data[i];
+  // }
 }
 
 /**
