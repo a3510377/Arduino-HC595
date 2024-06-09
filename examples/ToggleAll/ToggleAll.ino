@@ -1,5 +1,6 @@
 #include <Arduino.h>
-#include <MK_HC595.h>
+
+#include <MK_HC595.hpp>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
