@@ -41,7 +41,7 @@ MK_HC595(const uint8_t dataPin, const uint8_t latchPin, const uint8_t clockPin);
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.hpp>
+#include <MK_HC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
@@ -69,7 +69,7 @@ void loop() {
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.hpp>
+#include <MK_HC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
@@ -94,7 +94,7 @@ void loop() {
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.hpp>
+#include <MK_HC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
