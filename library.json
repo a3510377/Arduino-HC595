@@ -6,7 +6,7 @@
   "keywords": ["74HC595", "HC595", "Shift Register", "Arduino"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/a3510377/Arduino-HC595"
+    "url": "https://github.com/a3510377/Arduino-MK_HC595"
   },
   "authors": [
     {
