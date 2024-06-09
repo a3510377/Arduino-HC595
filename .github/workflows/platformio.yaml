@@ -30,7 +30,7 @@ jobs:
           cache: pip
 
       - name: Install PlatformIO Core
-        run: pip install --upgrade platformio
+        run: pip install -r .github/workflows/requirements.txt
 
       - name: Build PlatformIO examples
         run: pio ci --lib="." --board=uno --board=esp32dev --board=leonardo --board=sanguino_atmega1284p --board=megaatmega2560 ${{ matrix.example }}
