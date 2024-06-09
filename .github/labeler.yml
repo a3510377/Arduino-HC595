@@ -1,0 +1,9 @@
+source:
+  - src/**
+
+example:
+  - examples/**
+
+docs:
+  - docs/**
+  - README.md
