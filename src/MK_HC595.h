@@ -3,16 +3,17 @@
 #include <Arduino.h>
 
 template <uint8_t size>
-class HC595_PIN;
+class MK_HC595_PIN;
 
 template <uint8_t size>
-class HC595 {
+class MK_HC595 {
  public:
-  HC595(const uint8_t dataPin, const uint8_t latchPin, const uint8_t clockPin);
-
-  void init(void);
+  MK_HC595(const uint8_t dataPin, const uint8_t latchPin,
+           const uint8_t clockPin);
 
   void update(void);
+  void toggle(unsigned int pin, bool update = true);
+  void toggleAll(bool update = true);
   void move(unsigned int step, bool update = true);
   void set(unsigned int pin, uint8_t value, bool update = true);
   void setAs(const uint8_t* data, bool update = true);
@@ -22,7 +23,7 @@ class HC595 {
     setAllValue(value ? 0xff : 0, update);
   }
 
-  HC595_PIN<size> operator[](const unsigned int pin);
+  MK_HC595_PIN<size> operator[](const unsigned int pin);
 
   uint8_t* get(void);
   uint8_t get(unsigned int pin);
@@ -34,15 +35,19 @@ class HC595 {
 };
 
 template <uint8_t size>
-class HC595_PIN {
+class MK_HC595_PIN {
  public:
-  HC595_PIN(HC595<size>* other, const unsigned int pin);
+  MK_HC595_PIN(MK_HC595<size>* other, const unsigned int pin);
 
-  HC595_PIN* operator=(const uint8_t other);
+  MK_HC595_PIN& operator=(const uint8_t other);
+
+  operator bool() {
+    return _hc595->get(_pin);
+  }
 
  private:
-  HC595<size>* _hc595;
+  MK_HC595<size>* _hc595;
   uint8_t _pin;
 };
 
-#include "HC595.hpp"
+#include "MK_HC595.hpp"

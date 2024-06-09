@@ -1,0 +1,34 @@
+name: Test PlatformIO support
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        example:
+          - examples/TaskUtilities/TaskUtilities.ino
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+
+      - name: Build PlatformIO examples
+        run: pio ci --lib="." --board=uno --board=esp32dev --board=leonardo --board=sanguino_atmega1284p --board=megaatmega2560 ${{ matrix.example }}

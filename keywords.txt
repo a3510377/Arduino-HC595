@@ -1,0 +1,21 @@
+#######################################
+# Syntax Coloring Map For MK_HC595
+####################################### 
+# Class
+#######################################
+
+MK_HC595	KEYWORD1
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+init KEYWORD2
+update KEYWORD2
+move KEYWORD2
+set KEYWORD2
+setAs KEYWORD2
+setAllValue KEYWORD2
+setPortValue KEYWORD2
+setAll KEYWORD2
+get KEYWORD2
