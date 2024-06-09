@@ -3,10 +3,10 @@ name: Test PlatformIO support
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -15,7 +15,9 @@ jobs:
     strategy:
       matrix:
         example:
-          - examples/TaskUtilities/TaskUtilities.ino
+          - examples/GeneralDemo/GeneralDemo.ino
+          - examples/SimplifiedUse/SimplifiedUse.ino
+          - examples/ToggleAll/ToggleAll.ino
 
     steps:
       - name: Checkout
