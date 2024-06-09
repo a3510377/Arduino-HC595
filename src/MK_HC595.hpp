@@ -265,5 +265,5 @@ template <uint8_t size>
 MK_HC595_PIN<size>& MK_HC595_PIN<size>::operator=(const uint8_t status) {
   _hc595->set(_pin, status);
 
-  return this;
+  return *this;
 }
