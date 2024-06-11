@@ -10,8 +10,9 @@ MK_HC595	KEYWORD1
 # Methods and Functions 
 #######################################	
 
-init KEYWORD2
 update KEYWORD2
+toggle KEYWORD2
+toggleAll KEYWORD2
 move KEYWORD2
 set KEYWORD2
 setAs KEYWORD2
