@@ -3,13 +3,13 @@
 #include <Arduino.h>
 
 template <uint8_t size>
-class MK_HC595_PIN;
+class MKHC595_PIN;
 
 template <uint8_t size>
-class MK_HC595 {
+class MKHC595 {
  public:
-  MK_HC595(const uint8_t dataPin, const uint8_t latchPin,
-           const uint8_t clockPin);
+  MKHC595(const uint8_t dataPin, const uint8_t latchPin,
+          const uint8_t clockPin);
 
   void update(void);
   void toggle(unsigned int pin, bool update = true);
@@ -23,7 +23,7 @@ class MK_HC595 {
     setAllValue(value ? 0xff : 0, update);
   }
 
-  MK_HC595_PIN<size> operator[](const unsigned int pin);
+  MKHC595_PIN<size> operator[](const unsigned int pin);
 
   uint8_t* get(void);
   uint8_t get(unsigned int pin);
@@ -35,19 +35,19 @@ class MK_HC595 {
 };
 
 template <uint8_t size>
-class MK_HC595_PIN {
+class MKHC595_PIN {
  public:
-  MK_HC595_PIN(MK_HC595<size>* other, const unsigned int pin);
+  MKHC595_PIN(MKHC595<size>* other, const unsigned int pin);
 
-  MK_HC595_PIN& operator=(const uint8_t other);
+  MKHC595_PIN& operator=(const uint8_t other);
 
   operator bool() {
     return _hc595->get(_pin);
   }
 
  private:
-  MK_HC595<size>* _hc595;
+  MKHC595<size>* _hc595;
   uint8_t _pin;
 };
 
-#include "MK_HC595.hpp"
+#include "MKHC595.hpp"

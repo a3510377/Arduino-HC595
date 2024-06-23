@@ -1,14 +1,14 @@
-# Arduino-MK_HC595 Library
+# MKHC595 Library
 
 ## Overview
 
-The MK_HC595 library provides a simple interface for controlling shift registers such as the 74HC595 using Arduino boards. This library allows you to easily interface with shift registers to expand the number of output pins available on your Arduino.
+The MKHC595 library provides a simple interface for controlling shift registers such as the 74HC595 using Arduino boards. This library allows you to easily interface with shift registers to expand the number of output pins available on your Arduino.
 
 ## Installation
 
-To use the MK_HC595 library, follow these steps:
+To use the MKHC595 library, follow these steps:
 
-1. Download the MK_HC595 library from [GitHub repository](https://github.com/a3510377/Arduino-MK_HC595).
+1. Download the MKHC595 library from [GitHub repository](https://github.com/a3510377/MKHC595).
 2. Extract the downloaded ZIP file to the `libraries` folder in your Arduino sketchbook.
 
 ## Usage
@@ -16,7 +16,7 @@ To use the MK_HC595 library, follow these steps:
 ### Constructor
 
 ```cpp
-MK_HC595(const uint8_t dataPin, const uint8_t latchPin, const uint8_t clockPin);
+MKHC595(const uint8_t dataPin, const uint8_t latchPin, const uint8_t clockPin);
 ```
 
 - `dataPin`: Pin connected to the data input of the shift register.
@@ -41,15 +41,15 @@ MK_HC595(const uint8_t dataPin, const uint8_t latchPin, const uint8_t clockPin);
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.h>
+#include <MKHC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
 const uint8_t latchPin = 3;
 const uint8_t clockPin = 4;
 
-// Create an instance of MK_HC595
-MK_HC595<1> hc595(dataPin, latchPin, clockPin);
+// Create an instance of MKHC595
+MKHC595<1> hc595(dataPin, latchPin, clockPin);
 
 void setup() {}
 
@@ -69,15 +69,15 @@ void loop() {
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.h>
+#include <MKHC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
 const uint8_t latchPin = 3;
 const uint8_t clockPin = 4;
 
-// Create an instance of MK_HC595
-MK_HC595<1> hc595(dataPin, latchPin, clockPin);
+// Create an instance of MKHC595
+MKHC595<1> hc595(dataPin, latchPin, clockPin);
 
 void setup() {}
 
@@ -94,15 +94,15 @@ void loop() {
 ```cpp
 #include <Arduino.h>
 
-#include <MK_HC595.h>
+#include <MKHC595.h>
 
 // Define the pins connected to the shift register
 const uint8_t dataPin = 2;
 const uint8_t latchPin = 3;
 const uint8_t clockPin = 4;
 
-// Create an instance of MK_HC595
-MK_HC595<1> hc595(dataPin, latchPin, clockPin);
+// Create an instance of MKHC595
+MKHC595<1> hc595(dataPin, latchPin, clockPin);
 
 void setup() {}
 

@@ -1,10 +1,10 @@
 #######################################
-# Syntax Coloring Map For MK_HC595
+# Syntax Coloring Map For MKHC595
 ####################################### 
 # Class
 #######################################
 
-MK_HC595	KEYWORD1
+MKHC595	KEYWORD1
 
 #######################################
 # Methods and Functions 
