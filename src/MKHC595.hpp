@@ -91,6 +91,7 @@ uint8_t MKHC595<size>::get(unsigned int pin) {
 template <uint8_t size>
 void MKHC595<size>::setAs(const uint8_t* data, bool update) {
   memcpy(_data, data, size);
+
   if (update) {
     this->update();
   }
@@ -240,6 +241,10 @@ void MKHC595<size>::move(unsigned int step, bool update) {
       _data[i] = (_data[i] >> bit_shift) | (_data[i - 1] << (8 - bit_shift));
     }
     _data[0] >>= bit_shift;
+  }
+
+  if (update) {
+    this->update();
   }
 }
 
